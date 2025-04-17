@@ -71,30 +71,27 @@ func TestWithingsSegment(t *testing.T) {
 			ExpectedString:  "70.77kg",
 		},
 		{
-			Case: "Multiple Measuring Groups data",
+			Case: "Multiple Measuring Groups, only Measures data",
 			WithingsData: &WithingsData{
 				Body: &Body{
-					MeasureGroups: 
-						[]*MeasureGroup{
-							{
-								Measures: []*Measure{
-									{
-										Value: 7123,
-										Unit:  -2,
-									},
+					MeasureGroups: []*MeasureGroup{
+						{
+							Measures: []*Measure{
+								{
+									Value: 7123,
+									Unit:  -2,
 								},
 							},
 						},
-						[]*MeasureGroup{
-							{
-								Measures: []*Measure{
-									{
-										Value: 7754,
-										Unit:  -2,
-									},
+						{
+							Measures: []*Measure{
+								{
+									Value: 7754,
+									Unit:  -2,
 								},
 							},
 						},
+					},
 				},
 			},
 			ActivitiesError: errors.New("error"),
