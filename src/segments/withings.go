@@ -234,7 +234,7 @@ func (w *Withings) getSleep() bool {
 		}
 
 		end := time.Unix(series.Enddate, 0)
-		if sleepStart.IsZero() || start.After(sleepEnd) {
+		if sleepEnd.IsZero() || end.After(sleepEnd) {
 			sleepEnd = end
 		}
 	}
